@@ -9,6 +9,7 @@ iris=load_iris()
 iris_data = np.array(iris['data'])
 iris_target = np.array(iris['target'])
 
+
 x_train,x_test,y_train,y_test = model_selection.train_test_split(iris_data,iris_target,random_state=1,train_size=0.6)
 clf = svm.SVC(C=0.8, kernel='linear', gamma=20, decision_function_shape='ovr')
 clf.fit(x_train,y_train)
@@ -20,6 +21,8 @@ for i in iris_target:
         color.append('g')
     else:
         color.append('y')
+
+
 
 # plt.scatter(iris_data[:,0],iris_data[:,1], c=color)
 # plt.show()
